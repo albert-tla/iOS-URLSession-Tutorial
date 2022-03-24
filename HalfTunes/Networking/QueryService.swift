@@ -38,6 +38,7 @@ class QueryService {
   // MARK: - Constants
   //
   // TODO 1
+  let defaultSession = URLSession(configuration: .default)
   
   //
   // MARK: - Variables And Properties
