@@ -59,6 +59,9 @@ class QueryService {
   //
   func getSearchResults(searchTerm: String, completion: @escaping QueryResult) {
     // TODO 3
+    // 1
+    dataTask?.cancel()
+    
     DispatchQueue.main.async {
       completion(self.tracks, self.errorMessage)
     }
