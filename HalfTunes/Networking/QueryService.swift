@@ -62,6 +62,11 @@ class QueryService {
     // 1
     dataTask?.cancel()
     
+    // 2
+    if var urlComponents = URLComponents(string: "https://itunes.apple.com/search") {
+      urlComponents.query = "media=music&entity=song&term=\(searchTerm)"
+    }
+    
     DispatchQueue.main.async {
       completion(self.tracks, self.errorMessage)
     }
