@@ -46,6 +46,7 @@ class QueryService {
   // TODO 2
   var errorMessage = ""
   var tracks: [Track] = []
+  var dataTask: URLSessionDataTask?
   
   //
   // MARK: - Type Alias
