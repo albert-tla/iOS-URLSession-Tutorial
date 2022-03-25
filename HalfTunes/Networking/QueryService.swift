@@ -74,6 +74,14 @@ class QueryService {
         defer {
           self.dataTask = nil
         }
+        // 5
+        if let error = error {
+          self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+        } else if let data = data,
+                  let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 {
+          self.updateSearchResults(data)
+        }
       }
     }
     
