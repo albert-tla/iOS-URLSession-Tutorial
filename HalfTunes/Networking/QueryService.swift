@@ -87,6 +87,8 @@ class QueryService {
           }
         }
       }
+      // 7
+      dataTask?.resume()
     }
     
     DispatchQueue.main.async {
