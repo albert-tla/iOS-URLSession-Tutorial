@@ -69,6 +69,12 @@ class QueryService {
       guard let url = urlComponents.url else {
         return
       }
+      // 4
+      dataTask = defaultSession.dataTask(with: url) { data, response, error in
+        defer {
+          self.dataTask = nil
+        }
+      }
     }
     
     DispatchQueue.main.async {
