@@ -81,6 +81,10 @@ class QueryService {
                   let response = response as? HTTPURLResponse,
                   response.statusCode == 200 {
           self.updateSearchResults(data)
+          // 6
+          DispatchQueue.main.async {
+            completion(self.tracks, self.errorMessage)
+          }
         }
       }
     }
